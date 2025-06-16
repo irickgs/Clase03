@@ -1,5 +1,5 @@
 {
-  "name": "node-static-app",
+  "name": "static-app",
   "version": "1.0.0",
   "scripts": {
     "start": "node src/app.js",
@@ -12,5 +12,21 @@
   "devDependencies": {
     "jest": "^29.0.0",
     "supertest": "^7.1.1"
-  }
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandokbs3/fernandokbs3.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fernandokbs3/fernandokbs3.github.io/issues"
+  },
+  "homepage": "https://github.com/fernandokbs3/fernandokbs3.github.io#readme",
+  "description": ""
 }
