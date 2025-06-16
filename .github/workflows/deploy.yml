@@ -10,9 +10,16 @@ jobs:
             - name: Print variable
               run: echo "The value of the variable is ${{ secrets.MY_VARIABLE }}"
      
+            - name: checkout
+              uses: actions/checkout@v4 
+              
             - name: setup
               uses: actions/setup-node@v4
               with:
                 node-version: '18'
+
+            - name: Install dependencies
+              run: npm install
+
                 
     
