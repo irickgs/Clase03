@@ -9,3 +9,10 @@ jobs:
         steps:
             - name: Print variable
               run: echo "The value of the variable is ${{ secrets.MY_VARIABLE }}"
+     
+            - name: setup
+              uses: actions/setup-node@v4
+              with:
+                node-version: '18'
+                
+    
