@@ -25,15 +25,38 @@ jobs:
               run: npm run test
             
             - name: build page
-              run: npm run build             
+              run: npm run build 
+            
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                path: public/
+
+                         
+              
     deploy:
         # if: ${{ always() }}    #si hubiese un error en el test continua igual.
         runs-on: ubuntu-latest
         needs: build
+        
+        permissions:
+          pages: write
+          id-token: write
+
+        environment:
+          name: github-pages
+          url: ${{ steps.deployment-pages.outputs.page_url }}
 
         steps:
             - name: Deploy to production
               run: echo "Deploying to production environment"
-              
+            
+            - name: Deploy to GitHub Pages
+              id: deployment-pages 
+              uses: actions/deploy-pages@v3
+               
+
+                
+    
         
     
